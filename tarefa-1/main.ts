@@ -4,7 +4,6 @@ import { Cargos } from "./enum/cargos";
 
 const sistema = new Sistema();
 
-
 const colaborador1 = new Colaborador("José", Cargos.Estagiario);
 const colaborador2 = new Colaborador("Maria", Cargos.Junior);
 const colaborador3 = new Colaborador("João", Cargos.Pleno);
