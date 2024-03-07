@@ -1,6 +1,7 @@
 import Cliente from "../entities/Cliente";
+import IClienteRepository from "./interfaces/IClienteRepository";
 
-export default class InMemoryRepository {
+export default class InMemoryRepository implements IClienteRepository {
   private db: Cliente[];
 
   constructor() {
