@@ -62,12 +62,36 @@ class FuncionarioVoluntario implements FuncionarioVoluntario {
   }
 }
 
+class Pesquisador {
+  constructor(
+    public nome: string,
+    public cargaHorariaExtensao: number,
+    public orientador: Funcionario
+  ) {
+    this.nome = nome;
+    this.cargaHorariaExtensao = cargaHorariaExtensao;
+    this.orientador = orientador;
+  }
+
+  escreveRelatorio(): void {
+    console.log(
+      `Me chamo ${this.nome} e escrevo relatórios para o meu orientador ${this.orientador.nome}`
+    );
+  }
+  trabalha(): void {
+    console.log(
+      `Me chamo ${this.nome} e eu pequiso ${this.cargaHorariaExtensao} horas por semana para cumprir na minha graduação`
+    );
+  }
+}
+
 const funcionarioEfetivo = new FuncionarioEfetivo("João", 40, 2400);
 const funcionarioVoluntario = new FuncionarioVoluntario(
   "Enzo",
   20,
   funcionarioEfetivo
 );
+const pesquisador = new Pesquisador("Erico", 20, funcionarioEfetivo);
 
 //Efetivo
 console.log("nome:", funcionarioEfetivo.nome);
@@ -82,3 +106,7 @@ console.log(
 //Voluntário
 console.log("nome:", funcionarioVoluntario.nome);
 console.log("escreve relatorio:", funcionarioVoluntario.escreveRelatorio());
+
+//Pesquisador
+console.log("nome:", pesquisador.nome);
+pesquisador.escreveRelatorio();
